@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'League Spartan', sans-serif;
+    background: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+}
+.Contenedor{
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    margin-bottom: 40px;
+}
+header h1{
+    color: hsl(303, 43%, 22%);
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 64px 30px 64px;
+}
+header p{
+    color: hsl(303, 10%, 53%);
+    text-align: center;
+    margin: 0 30px;
+    line-height: 20px;
+}
+.Estrellas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.Estrellas > div{
+    /* background-color: hsl(300, 24%, 96%); */
+    background-color: hsl(300, 19%, 81%);
+    border-radius: 10px;
+    margin: 8px 0;
+    width: 330px;
+    height: 80px;
+    padding: 15px;
+    font-weight: 700;
+    color: hsl(303, 43%, 22%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.Comentarios{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.Comentarios > div{
+    background-color: hsl(300, 43%, 22%);
+    border-radius: 10px;
+    width: 330px;
+    height: 250px;
+    padding: 37px;
+    margin: 16px 24px 0px 24px;
+    color: hsl(300, 24%, 96%);
+    display: grid;
+    grid-template: 1fr 1fr 10fr/1fr 10fr;
+    grid-template-areas: 
+    "I N"
+    "I E"
+    "P P";
+}
+.Comentarios > div img{
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 45px;
+    height: 45px;
+    grid-area: I;
+}
+.Comentarios > div .Nombre{
+    grid-area: N;
+    font-weight: 700;
+    font-size: 15px;
+}
+.Comentarios > div .Estatus{
+    grid-area: E;
+    color: hsl(333, 80%, 67%);
+    font-size: 15px;
+}
+.Comentarios > div p{
+    grid-area: P;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+.attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+@media only screen and (min-width: 768px){
+    body{
+        background: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top left, bottom right;
+        background-size: 400px;
+    }
+    .Estrellas{
+        padding: 0 25px;
+    }
+    .Estrellas > div{
+        flex-direction: row;  
+        justify-content: flex-start;
+        width: 450px;
+        height: 55px;  
+        padding: 0;
+    }
+    .cincoestrellas{
+        margin-left: 30px;
+    }
+    h4{
+        margin-left: 30px;
+    }
+    .Estrellas_1{
+        align-self: flex-start;
+    }
+    .Estrellas_3{
+        align-self: flex-end;
+    }
+    .Comentarios{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .Comentario_1{
+        justify-self: center;
+        grid-area: 1/1/2/2;
+    }
+    .Comentario_2{
+        justify-self: center;
+        grid-area: 1/2/2/3;
+    }
+    .Comentario_3{
+        justify-self: center;
+        grid-area: 2/1/3/3;
+    }
+}
+@media only screen and (min-width: 1240px){
+    body{
+        background: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top left, bottom right;
+    }
+    .Contenedor{
+        margin: 130px auto;
+        max-width: 1110px;
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        row-gap: 25px;
+    }
+    header{
+        grid-column: 1/5;
+        max-width: 430px;
+        margin: 0;
+    }
+    header h1{
+        font-size: 50px;
+        text-align: left;
+        margin: 0;
+        line-height: 45px;
+    }
+    header p{
+        text-align: left;
+        margin: 15px 0 30px 0;
+    }
+    .Estrellas{
+        grid-column: 7/-1;
+        padding: 0;
+    }
+    .Comentarios{
+        grid-column: 1/-1;
+        display: flex;
+        flex-direction: row;
+        height: 320px;
+    }
+    .Comentarios > div{
+        width: 350px;
+        height: 240px;
+        margin: 0;
+    }
+    .Comentario_1{
+        align-self: flex-start;
+    }
+    .Comentario_3{
+        align-self: flex-end;
+    }
+    footer{
+        grid-column: 1/-1;
+    }
+  }
